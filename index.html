@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <title>Single Transformation</title>
+  <style>
+    .container {
+      width: 100vw;
+      border: 1px solid;
+
+
+    }
+
+    .transformation {
+      display: flex;
+      margin-left: 20px;
+      flex-wrap: wrap;
+
+    }
+    .input{
+      margin-left: 20px
+    }
+    input{
+      width: 20em;
+      height: 2em;
+    }
+    .transfomrmation_type{
+      margin-left: 20px;
+
+
+    }
+
+    select{
+      width: 15em;
+      height: 3em;
+      margin: 5px;
+    }
+    button{
+    width: 170px;
+    height: 45px;
+}
+.input_combine{
+  margin-left: 20px;
+
+}
+
+@media only screen and (max-width: 556px) {
+  button {
+    width: 120px;
+    height: 30px;  }
+
+select{
+      width: 10em;
+      height: 3em;
+      margin: 5px;
+    }
+
+    input{
+      width: 16em;
+      height: 2em;
+    }
+
+    
+  }
+  </style>
+</head>
+
+<body onchange="addInputBox()">
+
+
+  <div class="container">
+    <div class="transformation">
+
+      <div class="inputDiv" >
+
+        <select id="selectTransformation" class="selectTransformation">
+          <option value="singleTransformation">Single Transformation</option>
+          <option value="combineTransformation">Combine Transformation</option>
+
+        </select> <br>
+        <button id="buttonCombine" onclick="transformation()"> Transform</button>
+
+      </div>
+      <div class="input">
+        <h3 id="CoordinateX"> X <input type="number" id="coordianteX" placeholder="Co-ordinate X"> </h3>
+        <h3 id="CoordinateY">Y <input type="number" id="coordianteY" placeholder="Co-ordinate Y"> </h3>
+        <h3 id="Single_value">K <input type="number" id="valueK" placeholder="K" style="display:none"> </h3>
+        <h3 id="Single_value">A <input type="number" id="valueA" placeholder="A" style="display:none"> </h3>
+        <h3 id="Single_value">B <input type="number" id="valueB" placeholder="B" style="display:none"> </h3>
+
+      </div>
+      <div class="input_combine">
+        <h3 id="Combine_value">Combine :K <input type="number" id="Combine_valueK" placeholder="K" style="display:none"></h3>
+        <h3 id="Combine_value">Combine :A <input type="number" id="Combine_valueA" placeholder="A" style="display:none"></h3>
+        <h3 id="Combine_value">Combine :B<input type="number" id="Combine_valueB" placeholder="B" style="display:none"></h3>
+
+      </div>
+      <div class="transfomrmation_type">
+
+     </h4><select class="transformation" id="transformation">
+          <option value="r90" > Rotate 90,-270</option>
+          <option value="r180">Rotate 180,-180</option>
+          <option value="r270">Rotate 270 ,-90</option>
+          <option value="ref_x">Reflection x-axis</option>
+          <option value="ref_y">Reflection y-axis</option>
+          <option value="ref_y=x">Reflection y=x</option>
+          <option value="ref_y=-x">Reflection y=-x</option>
+          <option value="ref_x=k">Reflection x=k</option>
+          <option value="ref_y=k">Reflection y=k</option>
+          <option value="englargementOrigin"> Origin Enlargment</option>
+          <option value="englargementAB"> AB Enlargment</option>
+        </select>
+      
+     
+
+
+        <select class="transformation" id="Ctransformation" style="display: none">
+          <option value="Combine_r90"> Combine_Rotate 90,-270</option>
+          <option value="Combine_r180">Combine_Rotate 180,-180</option>
+          <option value="Combine_r270">Combine_Rotate 270 ,-90</option>
+          <option value="Combine_ref_x">Combine_Reflection x-axis</option>
+          <option value="Combine_ref_y">Combine_Reflection y-axis</option>
+          <option value="Combine_ref_y=x">Combine_Reflection y=x</option>
+          <option value="Combine_ref_y=-x">Combine_Reflection y=-x</option>
+          <option value="Combine_ref_x=k">Combine_Reflection x=k</option>
+          <option value="Combine_ref_y=k">Combine_Reflection y=k</option>
+          <option value="Combine_englargementOrigin">Combine_Origin Enlargment</option>
+          <option value="Combine_englargementAB">Combine_AB Enlargment</option>
+
+          <!-- value for combine -->
+
+     
+        </select>
+      </div>
+      </div>
+
+
+    </div>
+
+  <div class="answers">
+
+    <div class="answer">
+      <h1 id="description"></h1>
+      <h1 id="example"></h1>
+      <h1 id="transformationAnswer"></h1>
+
+    <div class="answer">
+      <h1 id="Cdescription"></h1>
+      <h1 id="Cexample"></h1>
+      <h1 id="CtransformationAnswer"></h1>
+    </div>
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
